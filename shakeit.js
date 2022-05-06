@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", evt => {
                 height: 250
             },
             boundary: {
-                width: 350,
-                height: 350
+                width: 300,
+                height: 300
             },
             enableResize: false,
             enableExif: true,
