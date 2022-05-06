@@ -1,0 +1,65 @@
+<html lang="zh-CN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css" />
+        <script type="text/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="lib/croppie/croppie.css" />
+        <script type="text/javascript" src="lib/croppie/croppie.js"></script>
+
+        <script type="text/javascript" src="lib/jsgif/LZWEncoder.js"></script>
+        <script type="text/javascript" src="lib/jsgif/NeuQuant.js"></script>
+        <script type="text/javascript" src="lib/jsgif/GIFEncoder.js"></script>
+        <script type="text/javascript" src="lib/jsgif/b64.js"></script>
+
+        <script type="text/javascript" src="shakeit.js"></script>
+        <style>
+            body {
+                background-color: #b2ebf2;
+            }
+            /* .col {
+                background-color: #c5e1a5;
+            } */
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row align-items-start ">
+                <div class="col-md-6 p-3">
+                    <div id="editor"></div>
+                    <div class="text-center">
+                        <input type="file" id="uploadedImage" accept="image/*" style="display: none;"/>
+                        <label for="uploadedImage">
+                            <span class="btn btn-primary">上传</span>
+                        </label>
+                        <button type="button" class="btn btn-primary ml-auto" id="cropBtn">裁剪</button>
+                    </div>
+                </div>
+                <div class="col-md-6 p-3">
+                    <div class="text-center">
+                        <canvas class="border border-2 border-dark" id="display" width="250" height="250"></canvas>
+                    </div>
+                    <div class="w-75 mx-auto">
+                        <label>帧率</label>
+                        <input class="form-range" type="range" min="4" max="40" value="22" class="slider" id="frameRate">
+                    </div>
+                    <div class="w-75 mx-auto">
+                        <label>水平方向振幅</label>
+                        <input class="form-range" type="range" min="0" max="6" value="3" class="slider" id="horizontalAmp">
+                    </div>
+                    <div class="w-75 mx-auto">
+                        <label>竖直方向振幅</label>
+                        <input class="form-range" type="range" min="0" max="6" value="3" class="slider" id="verticalAmp">
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" id="saveBtn">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
