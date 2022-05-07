@@ -11,6 +11,7 @@
         <link rel="manifest" href="assets/icon/site.webmanifest?v=1">
         <link rel="mask-icon" href="assets/icon/safari-pinned-tab.svg?v=1" color="#5bbad5">
 
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css" />
         <script type="text/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
 
@@ -46,7 +47,7 @@
                         <span class="btn btn-primary ml-auto" id="cropBtn">裁剪</span>
                     </div>
                 </div>
-                <div class="col-md-6 p-3">
+                <div class="col-md-6 p-3" data-aos="fade-right" data-aos-anchor="#animationCol" id="animationCol" data-aos-anchor-placement="top-center">
                     <div class="text-center mb-2">
                         <canvas class="border border-2 border-dark" id="display" width="250" height="250"></canvas>
                     </div>
@@ -68,5 +69,14 @@
                 </div>
             </div>
         </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({
+              disable: function() {
+                  return window.innerWidth >= 768;
+              }
+          });
+        </script>
     </body>
 </html>

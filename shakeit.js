@@ -129,6 +129,8 @@ document.addEventListener("DOMContentLoaded", evt => {
             if (animateRequestId !== undefined) cancelAnimationFrame(animateRequestId);
             animateRequestId = requestAnimationFrame(animate);
         });
+
+        document.getElementById("animationCol").scrollIntoView();
     }, false);
 
     document.getElementById("saveBtn").addEventListener('click', function(evt) {
