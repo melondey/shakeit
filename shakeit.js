@@ -25,11 +25,15 @@ document.addEventListener("DOMContentLoaded", evt => {
             },
             enableResize: false,
             enableExif: true,
+        });
+        croppie.bind({
             url: "assets/upload_message.png",
-        }),
+        }).then(() => {
+            croppie.setZoom(0);
+        });
 
     // canvas related stuff
-        displayCtx = display.getContext('2d'),
+    let displayCtx = display.getContext('2d'),
         animateRequestId,
         imgDisplay = new Image(),
 
