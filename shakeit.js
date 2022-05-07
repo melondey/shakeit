@@ -80,12 +80,12 @@ document.addEventListener("DOMContentLoaded", evt => {
                 croppedHeight = bottomRightY - topLeftY;
 
             function animate(timestamp){
-                let frameInterval = 1000.0 / parseInt(frameRateSlider.value); 
+                let frameInterval = 1000.0 / Number(frameRateSlider.value); 
                 // Draw a new frame when elapsed time >= frameInterval.
                 if (timestamp - previousAnimateTimeStamp >= frameInterval ||
                     previousAnimateTimeStamp === undefined) {
-                    let verticalAmp = croppedWidth * parseInt(verticalAmpSlider.value) / 100.0,
-                        horizontalAmp = croppedHeight * parseInt(horizontalAmpSlider.value) / 100.0,
+                    let verticalAmp = croppedWidth * Number(verticalAmpSlider.value) / 100.0,
+                        horizontalAmp = croppedHeight * Number(horizontalAmpSlider.value) / 100.0,
                         displacementX = Math.cos(animateCounter * 2 * Math.PI / period) * horizontalAmp,
                         displacementY = Math.sin((0.2 + animateCounter) * 2 * Math.PI / period) * verticalAmp,
                         sx,
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
         if (!recording) recording = true;
 
-        let frameInterval = 1000.0 / parseInt(document.getElementById("frameRate").value);
+        let frameInterval = 1000.0 / Number(document.getElementById("frameRate").value);
         gifEncoder.setDelay(frameInterval);
         gifEncoder.setRepeat(0);
         gifEncoder.setQuality(1);
